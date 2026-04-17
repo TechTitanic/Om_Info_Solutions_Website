@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our Gallery - OM INFO SOLUTIONS</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+
+<div class="header">
+    <h1>OM INFO SOLUTIONS</h1>
+</div>
+
+<div class="menu">
+    <a href="sixty_two.html">Home</a>
+    <a href="course.html">Courses</a>
+    <a href="insert.html">Insert</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+</div>
+
+<div class="gallery">
+    <h2>Our Gallery</h2>
+
+    <div class="slideshow">
+        <img class="slide active" src="Image/b16.jpg">
+        <img class="slide" src="Image/b17.jpeg">
+        <img class="slide" src="Image/b18.webp">
+        <img class="slide" src="Image/b11.jpg">
+        <img class="slide" src="Image/b30.avif">
+        <img class="slide" src="Image/b33.jpg">
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2026 OM INFO SOLUTIONS</p>
+</div>
+
+<script>
+let index = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(i) {
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[i].classList.add("active");
+}
+
+function changeSlide(step) {
+    index += step;
+
+    if (index >= slides.length) index = 0;
+    if (index < 0) index = slides.length - 1;
+
+    showSlide(index);
+}
+
+setInterval(() => {
+    changeSlide(1);
+}, 3000);
+</script>
+
+</body>
+</html>
