@@ -1,69 +1,132 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Our Gallery - OM INFO SOLUTIONS</title>
-    <link rel="stylesheet" href="gallery.css">
-</head>
-
-<body>
-
-<div class="header">
-    <h1>OM INFO SOLUTIONS</h1>
-</div>
-
-<div class="menu">
-    <a href="sixty_two.html">Home</a>
-    <a href="course.html">Courses</a>
-    <a href="insert.html">Insert</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="gallery.html">Gallery</a>
-</div>
-
-<div class="gallery">
-    <h2>Our Gallery</h2>
-
-    <div class="slideshow">
-        <img class="slide active" src="Image/b16.jpg">
-        <img class="slide" src="Image/b16.jpg">
-        <img class="slide" src="Image/b18.webp">
-        <img class="slide" src="Image/b11.jpg">
-        <img class="slide" src="Image/b30.avif">
-        <img class="slide" src="Image/b33.jpg">
-
-        <button class="prev" onclick="changeSlide(-1)">❮</button>
-        <button class="next" onclick="changeSlide(1)">❯</button>
-    </div>
-</div>
-
-<div class="footer">
-    <p>© 2026 OM INFO SOLUTIONS</p>
-</div>
-
-<script>
-let index = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlide(i) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[i].classList.add("active");
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #f5f7fa, #e4ecf7);
 }
 
-function changeSlide(step) {
-    index += step;
-
-    if (index >= slides.length) index = 0;
-    if (index < 0) index = slides.length - 1;
-
-    showSlide(index);
+.header {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(to right, DarkBlue, Blue);
 }
 
-setInterval(() => {
-    changeSlide(1);
-}, 3000);
-</script>
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-</body>
-</html>
+.menu a {
+    text-decoration: none;
+    color: Blue;
+    font-size: 18px;
+    position: relative;
+}
 
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: Blue;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
 
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a:hover {
+    color: DarkBlue;
+}
+
+.gallery {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    font-size: 36px;
+    color: DarkBlue;
+    margin-bottom: 30px;
+}
+
+.slideshow {
+    position: relative;
+    max-width: 100%;
+}
+
+.slide {
+    display: none;
+    width: 30%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.active {
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 35%;
+}
+
+.next {
+    right: 35%;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: DarkBlue;
+    color: white;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .slide {
+        width: 80%;
+        height: 220px;
+    }
+
+    .prev {
+        left: 10%;
+    }
+
+    .next {
+        right: 10%;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
