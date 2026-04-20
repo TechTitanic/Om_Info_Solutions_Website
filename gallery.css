@@ -10,7 +10,7 @@ body {
     padding: 20px;
     font-size: 28px;
     font-weight: bold;
-    background: linear-gradient(to right, DarkBlue, Blue);
+    background: linear-gradient(to right, darkblue, blue);
 }
 
 .menu {
@@ -20,11 +20,12 @@ body {
     background-color: white;
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
 }
 
 .menu a {
     text-decoration: none;
-    color: Blue;
+    color: blue;
     font-size: 18px;
     position: relative;
 }
@@ -34,7 +35,7 @@ body {
     position: absolute;
     width: 0%;
     height: 2px;
-    background: Blue;
+    background: blue;
     left: 0;
     bottom: -5px;
     transition: 0.3s;
@@ -45,7 +46,7 @@ body {
 }
 
 .menu a:hover {
-    color: DarkBlue;
+    color: darkblue;
 }
 
 .gallery {
@@ -55,26 +56,25 @@ body {
 
 .gallery h2 {
     font-size: 36px;
-    color: DarkBlue;
+    color: darkblue;
     margin-bottom: 30px;
 }
 
 .slideshow {
     position: relative;
-    max-width: 100%;
+    max-width: 800px;
+    margin: auto;
 }
 
 .slide {
     display: none;
-    width: 30%;
-    height: 300px;
+    width: 100%;
+    height: 400px;
     object-fit: cover;
     border-radius: 15px;
-    margin: auto;
-    transition: opacity 0.5s ease-in-out;
 }
 
-.active {
+.slide.active {
     display: block;
 }
 
@@ -89,14 +89,15 @@ body {
     font-size: 22px;
     cursor: pointer;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 .prev {
-    left: 35%;
+    left: 10px;
 }
 
 .next {
-    right: 35%;
+    right: 10px;
 }
 
 .prev:hover, .next:hover {
@@ -106,27 +107,23 @@ body {
 .footer {
     text-align: center;
     padding: 20px;
-    background: DarkBlue;
+    background: darkblue;
     color: white;
     margin-top: 40px;
 }
 
 @media (max-width: 768px) {
     .slide {
-        width: 80%;
         height: 220px;
-    }
-
-    .prev {
-        left: 10%;
-    }
-
-    .next {
-        right: 10%;
     }
 
     .menu {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .prev, .next {
+        font-size: 18px;
+        padding: 8px 12px;
     }
 }
