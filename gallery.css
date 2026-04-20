@@ -35,7 +35,7 @@ body {
 .menu a::after {
     content: "";
     position: absolute;
-    width: 0%;
+    width: 30%;
     height: 2px;
     background: blue;
     left: 0;
@@ -84,7 +84,7 @@ body {
     background: black;    
 }
 
-/* ACTIVE SLIDE */
+
 .active {
     display: block;
 }
@@ -115,7 +115,6 @@ body {
     background: rgba(0,0,0,0.8);
 }
 
-/* FOOTER */
 .footer {
     text-align: center;
     padding: 20px;
