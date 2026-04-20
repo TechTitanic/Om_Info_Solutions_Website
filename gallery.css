@@ -4,16 +4,14 @@ body {
     background: linear-gradient(to right, #f5f7fa, #e4ecf7);
 }
 
-
 .header {
     text-align: center;
     color: white;
     padding: 20px;
     font-size: 28px;
     font-weight: bold;
-    background: linear-gradient(to right, darkblue, blue);
+    background: linear-gradient(to right, DarkBlue, Blue);
 }
-
 
 .menu {
     display: flex;
@@ -22,12 +20,11 @@ body {
     background-color: white;
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    flex-wrap: wrap;
 }
 
 .menu a {
     text-decoration: none;
-    color: blue;
+    color: Blue;
     font-size: 18px;
     position: relative;
 }
@@ -35,9 +32,9 @@ body {
 .menu a::after {
     content: "";
     position: absolute;
-    width: 30%;
+    width: 0%;
     height: 2px;
-    background: blue;
+    background: Blue;
     left: 0;
     bottom: -5px;
     transition: 0.3s;
@@ -48,10 +45,9 @@ body {
 }
 
 .menu a:hover {
-    color: darkblue;
+    color: DarkBlue;
 }
 
-/* GALLERY SECTION */
 .gallery {
     padding: 60px 20px;
     text-align: center;
@@ -59,31 +55,24 @@ body {
 
 .gallery h2 {
     font-size: 36px;
-    color: darkblue;
+    color: DarkBlue;
     margin-bottom: 30px;
 }
 
-/* SLIDESHOW CONTAINER */
 .slideshow {
     position: relative;
-    max-width: 800px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 100%;
 }
-
 
 .slide {
     display: none;
-    width: 100%;
-    max-width: 800px;
-    height: 450px;
-    object-fit: contain;  
+    width: 30%;
+    height: 300px;
+    object-fit: cover;
     border-radius: 15px;
-    background: black;    
+    margin: auto;
+    transition: opacity 0.5s ease-in-out;
 }
-
 
 .active {
     display: block;
@@ -100,15 +89,14 @@ body {
     font-size: 22px;
     cursor: pointer;
     border-radius: 5px;
-    transition: 0.3s;
 }
 
 .prev {
-    left: 10px;
+    left: 35%;
 }
 
 .next {
-    right: 10px;
+    right: 35%;
 }
 
 .prev:hover, .next:hover {
@@ -118,24 +106,27 @@ body {
 .footer {
     text-align: center;
     padding: 20px;
-    background: darkblue;
+    background: DarkBlue;
     color: white;
     margin-top: 40px;
 }
 
-
 @media (max-width: 768px) {
     .slide {
-        height: 250px;
+        width: 80%;
+        height: 220px;
+    }
+
+    .prev {
+        left: 10%;
+    }
+
+    .next {
+        right: 10%;
     }
 
     .menu {
         flex-direction: column;
         gap: 10px;
-    }
-
-    .prev, .next {
-        font-size: 18px;
-        padding: 8px 12px;
     }
 }
