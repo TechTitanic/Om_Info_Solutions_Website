@@ -24,21 +24,16 @@
     <h2>Our Gallery</h2>
 
     <div class="slideshow">
+        <img class="slide active" src="Image/b16.jpg">
+        <img class="slide" src="Image/b16.jpg">
+        <img class="slide" src="Image/b18.webp">
+        <img class="slide" src="Image/b11.jpg">
+        <img class="slide" src="Image/b30.avif">
+        <img class="slide" src="Image/b33.jpg">
 
-        <!-- Images -->
-        <img class="slide active" src=b16.jpg>
-        <img class="slide" src=b16.jpg>
-        <img class="slide" src=b18.webp>
-        <img class="slide" src=b11.jpg>
-        <img class="slide" src=b30.avif>
-        <img class="slide" src=b33.jpg>
-
-        <!-- Controls -->
         <button class="prev" onclick="changeSlide(-1)">❮</button>
         <button class="next" onclick="changeSlide(1)">❯</button>
-
     </div>
-
 </div>
 
 <div class="footer">
@@ -63,7 +58,6 @@ function changeSlide(step) {
     showSlide(index);
 }
 
-// Auto slideshow
 setInterval(() => {
     changeSlide(1);
 }, 3000);
