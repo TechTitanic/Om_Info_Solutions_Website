@@ -1,24 +1,69 @@
+<!DOCTYPE html>
 <html>
-    <title> Home page</title>
-    <head>
-    <title>Insert Page</title>
-    <link rel="stylesheet" href="insert.css">
+<head>
+  <title>Register Page - OM INFO SOLUTIONS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-<div id="register">
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">OM INFO SOLUTIONS</a>
+  </div>
+</nav>
 
-<h2>Register Now</h2>
+<!-- Form Section -->
+<div class="container mt-5">
 
-<form>
-Name: <input type="text"><br><br>
-Email: <input type="email"><br><br>
-Course: <input type="text"><br><br>
-<input type="submit" value="Submit">
-</form>
+  <div class="row justify-content-center">
+
+    <div class="col-md-6">
+
+      <div class="card shadow p-4">
+
+        <h2 class="text-center mb-4">Register Now</h2>
+
+        <form>
+
+          <!-- Name -->
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name">
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Enter your email">
+          </div>
+
+          <!-- Course -->
+          <div class="mb-3">
+            <label class="form-label">Course</label>
+            <input type="text" class="form-control" placeholder="Enter course name">
+          </div>
+
+          <!-- Button -->
+          <button type="submit" class="btn btn-primary w-100">
+            Submit
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
